@@ -5,6 +5,10 @@ license:             BSD3
 author:              "James Faure"
 maintainer:          "james.faure@epitech.eu"
 copyright:           "2019 James Faure"
+cc-options: "-static"
+ld-options: "-static  -pthread"
+extra-lib-dirs: ./.system-work/lib
+
 
 extra-source-files:
 - README.md
@@ -81,7 +85,7 @@ default-extensions:
 # # ghc-options:   -Wunused-imports
 #   ghc-options:   -Wno-deprecations
 
-ghc-options:  -Wno-deprecations -fdefer-typed-holes -Wno-typed-holes #-Wunused-imports -Wunused-binds -threaded
+ghc-options:  -Wno-deprecations -fdefer-typed-holes -Wno-typed-holes -threaded #-Wunused-imports -Wunused-binds -threaded
 executables:
   irie-exe:
 #   dependencies: irie 
@@ -95,7 +99,7 @@ executables:
     - compiler/5_Backends/
 
     main:          Main.hs
-    ghc-options:  -fdefer-typed-holes -Wno-typed-holes -Wunused-imports # -Wunused-binds -threaded
+    ghc-options:  -fdefer-typed-holes -Wno-typed-holes -static -Wunused-imports # -Wunused-binds -threaded
 
 #tests:
 #  irie-test:
